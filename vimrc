@@ -45,3 +45,8 @@ endif
 :nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
 :nmap \w :setlocal wrap!<CR>:setlocal wrap?<CR>
 
+autocmd vimenter * NERDTree
+autocmd vimenter * if !argc() | NERDTree | endif
+set number
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd VimEnter * wincmd l
