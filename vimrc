@@ -1,8 +1,10 @@
-set number
 set ignorecase
 set hlsearch
 set showmatch
-set tabstop=4
+set ts=8
+set shiftwidth=2
+set expandtab
+set softtabstop=2
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
@@ -45,8 +47,8 @@ endif
 :nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
 :nmap \w :setlocal wrap!<CR>:setlocal wrap?<CR>
 
-autocmd vimenter * NERDTree
-autocmd vimenter * if !argc() | NERDTree | endif
+"autocmd vimenter * NERDTree
+"autocmd vimenter * if !argc() | NERDTree | endif
 set number
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-autocmd VimEnter * wincmd l
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"autocmd VimEnter * wincmd l
