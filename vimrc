@@ -3,6 +3,9 @@ set ignorecase
 set hlsearch
 set showmatch
 set tabstop=4
+set expandtab
+set softtabstop=4
+set shiftwidth=4
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
@@ -35,7 +38,6 @@ filetype plugin indent on
 :let g:ctrlp_working_path_mode = 0
 :let g:ctrlp_dotfiles = 0
 :let g:ctrlp_switch_buffer = 0
-:nmap \e :NERDTreeToggle<CR>
 if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
   set t_Co=256
 endif
@@ -45,8 +47,6 @@ endif
 :nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
 :nmap \w :setlocal wrap!<CR>:setlocal wrap?<CR>
 
-autocmd vimenter * NERDTree
-autocmd vimenter * if !argc() | NERDTree | endif
 set number
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+au BufEnter,BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd VimEnter * wincmd l
