@@ -5,7 +5,6 @@ set tabstop=4
 set expandtab
 set softtabstop=4
 set shiftwidth=4
-execute pathogen#infect()
 syntax on
 filetype plugin indent on
 :nmap \l :setlocal number!<CR>
@@ -46,6 +45,5 @@ endif
 :nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
 :nmap \w :setlocal wrap!<CR>:setlocal wrap?<CR>
 
-set number
 au BufEnter,BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd VimEnter * wincmd l
